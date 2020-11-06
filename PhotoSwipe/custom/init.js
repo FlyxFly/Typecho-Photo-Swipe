@@ -8,23 +8,28 @@ async function init(){
 
     // 生成URL数组
     const imgs=document.querySelectorAll('.post-content img');
-    for (var i = imgs.length - 1; i >= 0; i--) {
+    for (var i = 0; i < imgs.length; i++) {
         const size=await getImageSize(imgs[i].src);
-        items.push({
+        let data={
             src:imgs[i].src,
             w:size.width,
             h:size.height
-        })
+        };
+        if(imgs[i].title){
+            data.title=imgs[i].title;
+        }
+        if(imgs[i].dataset.small){
+            data.msrc=imgs[i].dataset.small;
+        }
+        items.push(data);
     }
     // 绑定图片点击事件
     document.querySelector('.post-content').addEventListener('click',(e)=>{
-        console.log(e.target.nodeName);
         if(e.target.nodeName==='IMG'){
             event.preventDefault();
             openGallery(e.target.src);
         }
     })
-
 }
 
 init();

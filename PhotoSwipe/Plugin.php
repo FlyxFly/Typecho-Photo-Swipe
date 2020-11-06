@@ -6,7 +6,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * @package PhotoSwipe
  * @author 王小明
  * @version 1.0.0
- * @link https://saikou.net
+ * @link https://fly2x.cn
  */
 class PhotoSwipe_Plugin implements Typecho_Plugin_Interface
 {
@@ -42,10 +42,10 @@ class PhotoSwipe_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function config(Typecho_Widget_Helper_Form $form){
-	    $jquery = new Typecho_Widget_Helper_Form_Element_Radio(
-        'jquery', array('0'=> '手动加载', '1'=> '自动加载'), 0, 'jQuery',
-            '“手动加载”需要你手动加载jQuery，若选择“自动加载”，插件会自动加载jQuery，版本为1.9.1。');
-        $form->addInput($jquery);
+	    // $jquery = new Typecho_Widget_Helper_Form_Element_Radio(
+     //    'jquery', array('0'=> '手动加载', '1'=> '自动加载'), 0, 'jQuery',
+     //        '“手动加载”需要你手动加载jQuery，若选择“自动加载”，插件会自动加载jQuery，版本为1.9.1。');
+     //    $form->addInput($jquery);
     }
 
     /**
